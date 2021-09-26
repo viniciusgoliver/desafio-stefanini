@@ -191,6 +191,16 @@ ServerlessDeploymentBucketName: desafio-stefanini-dev-serverlessdeploymentbucket
 
 > Note: `endpoints` é interessante destacar que, o processo de deploy já cria os endpoints já com as uri que se encontram na AWS. 
 
+## Testes unitários
+
+Finalizando as implementações da API, adicionei ao repositório o Jest como base de Testes. Rode o comando abaixo para testar
+
+```sh
+~$ yarn test
+```
+
+> Note: Acabei não finalizando a implementação pelo tempo que tive pra desenvolver a API. Mas trabalharei em paralelo nos testes unitários e de integração. 
+
 Com isso, finalizo o processo de implantação de Lambda Functions com NodeJS na AWS.
 
 ## License
