@@ -12,7 +12,15 @@ module.exports = class FuncionarioService {
 
   /** Responsável por instanciar o método de Responsável por listar todos os registros */
   async findAll(){
-    return this.repository.findAll();                
+    // Valida se o registro existe no banco
+    const funcionarios = await this.repository.findAll();
+
+    // Caso não exista retorna mensagem
+    if(funcionarios.length === 0){
+      return 'Nenhum registro na base de dados.';
+    }   
+    
+    return funcionarios;                
 }
 
 /** Responsável por instanciar o método de Responsável por Buscar um determinado registro */
@@ -72,7 +80,8 @@ module.exports = class FuncionarioService {
     }   
     
     // Deleta registro baseado no parametro ID
-    return await this.repository.delete(id);           
+    return `Registro ${id} deletado com sucesso.`;
+    
   }
 
 };
