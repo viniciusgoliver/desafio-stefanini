@@ -23,8 +23,8 @@ module.exports = class FuncionarioController {
   }
 
   /* Método responsável por adicionar um novo registro no banco  */
-  async create(body){
-    return await this.service.create(body);
+  create(body){
+    return this.service.create(body);
   }
 
   /* Método responsável por atualizar um registro no bd baseado no parametro ID  */

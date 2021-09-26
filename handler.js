@@ -11,7 +11,7 @@ const funcionarioController = new FuncionarioController();
 // Function responsável por Criar novo registro
 module.exports.create = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
-  
+   
   connectToDatabase()
     .then(async () => {
       // Instancia Controller, chamando método create
