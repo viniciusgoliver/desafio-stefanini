@@ -15,35 +15,35 @@ functions:
     handler: handler.create 
     events:
       - http:
-          path: users
+          path: funcionarios
           method: post
           cors: true
   getOne:
     handler: handler.getOne
     events:
       - http:
-          path: users/{id}
+          path: funcionarios/{id}
           method: get
           cors: true
   getAll:
     handler: handler.getAll
     events:
      - http:
-         path: users
+         path: funcionarios
          method: get
          cors: true
   update:
     handler: handler.update
     events:
      - http:
-         path: users/{id}
+         path: funcionarios/{id}
          method: put
          cors: true
   delete:
     handler: handler.delete
     events:
      - http:
-         path: users/{id}
+         path: funcionarios/{id}
          method: delete
          cors: true
 
