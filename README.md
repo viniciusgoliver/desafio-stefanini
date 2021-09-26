@@ -1,4 +1,4 @@
-# Desafio Stefanini
+# Desafio NodeJS (Lambda Functions AWS)
 ## _Serverless Challenger_
 
 
