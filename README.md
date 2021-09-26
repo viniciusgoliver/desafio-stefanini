@@ -11,21 +11,23 @@ Neste desafio, foi provisionado uma infraestrutura na AWS, com uma lambda functi
 - Yarn
 - Banco de Dados - MongoDB, rodando externamente com MongoDB Atlas (AWS)
 - Arquitetura separada conforme abaixo
+- Utilização de variável de hambiente com DotEnv
+
 #
     1 - Model - Extrutura entity de Funcionarios
     2 - Repository - Persistência de Dados
     3 - Service - Regras de Negócio
-    4 - Controller - Privisionamento dos Services
+    4 - Controller - Provisionamento dos Services
     5 - Database - Configuração do Banco de dados
 #
-- Utilização de variável de hambiente com DotEnv
+
 
 ## Configurações de API
 As informações abaixo simulam um passo a passo para testes locais assim como o próprio deploy da Lambda na AWS, que foi o Serviço de Clound implantado em questão. Se você já tem o Framework do Serverless instalado na máquina, pode passar diretamente para o passo clone do projeto, conforme comandos abaixo. 
 
 ## Observações
 
-Não estou abordando aqui configuração de usuários, grupo de susuário e permissões dentro da Amazon, assim como geração de credenciais de acesso como o key e o secret.
+Não estou abordando aqui configuração de usuários, grupo de susuário e permissões dentro da AWS, assim como geração de credenciais de acesso como o key e o secret.
 
 ## Instalação
 
@@ -42,7 +44,7 @@ Com o Node e NPM instalados, siga os passos abaixo.
 ~$ yarn
 ```
 
-Agora, precisaremos criar um novo arquivo chamado variables.env e adicionar os dados de acesso refernete ao seu Banco de dados MONGODB.
+Agora, precisaremos criar um novo arquivo chamado variables.env na raiz do nosso projeto e adicionar os dados de acesso referente ao seu Banco de dados MONGODB.
 
 ```sh
 DB_HOST=
@@ -53,11 +55,11 @@ DB_DATABASE=
 
 ## Considerações
 
-> O arquivo serverless, resopnsável pelas configurações do Labda, no final adicionei um plugin chamado `serverless-offline` Com esse plugin é possível rodarmos ou ter uma prévia das nossas functions Labda, isso é de grande ajuda pra corrigirmos possíveis falhas, ou criarmos novas features antes mesmo de rodar o Deploy Final. is required for PDF rendering.
+> O arquivo serverless.yml, responsável pelas configurações do Labda, no final adicionei um plugin chamado `serverless-offline` Com esse plugin é possível rodarmos ou ter uma prévia das nossas Lambda functions, isso é de grande ajuda pra corrigirmos possíveis falhas, ou criarmos novas features antes mesmo de rodar o Deploy Final. 
 
 ## Testando local
 
-Para inicializarmos nossos primeiros passas, vamos simular o deploy da nossa API. Para isso, execute o comando abaixo.
+Para iniciar nossas primeiras execuções, vamos simular o deploy da nossa API in LOCALHOST. Para isso, execute o comando abaixo.
 
 ```sh
 ~$ sls offline start --skipCacheInvalidation
@@ -92,11 +94,11 @@ offline: Function names exposed for local invocation by aws-sdk:
 
 ```
 
-> Note: `/dev/` é por que eu específiquei dentro do arquivo serverless o stage de execução como dev. 
+> Note: `/dev/` é por que eu específiquei dentro do arquivo serverless.yml o stage de execução como dev. 
 
 Seguindo, teste os endpoints com o insomnia ou postman.
 
-Após a previa, vamo executar nosso deploy para o ambiente AWS.
+Após a prévia, vamos executar nosso deploy para o ambiente AWS.
 
 ```sh
 ~$ serverless deploy -v
@@ -104,7 +106,7 @@ Após a previa, vamo executar nosso deploy para o ambiente AWS.
 
 > Note: `-v` utilizei o parâmetro -v, pra acompanhar todo o processo de deploy, no modo verbose. É uma forma de acompanhar o passo a passo da configuração para AWS.
 
-Se tudo der certo, vamos ter o retorno mais uo menos o abaixo.
+Se tudo der certo, vamos ter o retorno mais ou menos conforme abaixo.
 
 ```sh
 Serverless: Packaging service...
