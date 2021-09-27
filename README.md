@@ -55,7 +55,7 @@ DB_DATABASE=
 
 ## Considerações
 
-> O arquivo serverless.yml, responsável pelas configurações do Labda, no final adicionei um plugin chamado `serverless-offline` Com esse plugin é possível rodarmos ou ter uma prévia das nossas Lambda functions, isso é de grande ajuda pra corrigirmos possíveis falhas, ou criarmos novas features antes mesmo de rodar o Deploy Final. 
+> O arquivo serverless.yml, responsável pelas configurações do Lambda, no final adicionei um plugin chamado `serverless-offline` Com esse plugin é possível rodarmos ou ter uma prévia das nossas Lambda functions, isso é de grande ajuda pra corrigirmos possíveis falhas, ou criarmos novas features antes mesmo de rodar o Deploy Final. 
 
 ## Testando local
 
